@@ -17,11 +17,10 @@ function setLang(lang) {
   for (const b of document.querySelectorAll(".lang button")) b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
   try { localStorage.setItem("cpb-lang", lang); } catch {}
 }
-// Idioma guardado; si no hay, el del navegador (español → ES, el resto → EN).
+// Idioma: ingles por defecto; si el visitante eligio ES, se recuerda su eleccion.
 let saved = null;
 try { saved = localStorage.getItem("cpb-lang"); } catch {}
-const browserLang = (navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en";
-setLang(saved === "es" || saved === "en" ? saved : browserLang);
+setLang(saved === "es" ? "es" : "en");
 for (const b of document.querySelectorAll(".lang button")) b.addEventListener("click", () => setLang(b.dataset.lang));
 
 // ---- Botón de Chrome Web Store ----
