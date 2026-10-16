@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Privacy Blur — Tapá tus chats. Leé solo lo que importa.</title>
+  <meta name="description" content="Extensión de Chrome que desenfoca chats, nombres, fotos y mensajes de WhatsApp Web. Revelá solo lo que querés leer. Elegís qué tapar. Sin cuenta, sin rastreo.">
+  <meta property="og:title" content="Chat Privacy Blur — Hide your chats. Read only what matters.">
+  <meta property="og:description" content="Blur chats, names, photos and messages on WhatsApp Web. Reveal only what you want to read. Free Chrome extension.">
+  <meta property="og:image" content="assets/share-card.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-title="1" data-title-es="Chat Privacy Blur — Tapá tus chats. Leé solo lo que importa." data-title-en="Chat Privacy Blur — Hide your chats. Read only what matters.">
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="32" height="32"> Chat Privacy Blur</a>
+      <nav class="nav-links" aria-label="Main">
+        <a class="hide-sm" href="#features"><span data-l="es">Funciones</span><span data-l="en">Features</span></a>
+        <a class="hide-sm" href="#pricing"><span data-l="es">Precio</span><span data-l="en">Pricing</span></a>
+        <a class="hide-sm" href="#faq">FAQ</a>
+        <a href="privacy.html"><span data-l="es">Privacidad</span><span data-l="en">Privacy</span></a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm hide-sm" data-cws href="#get"><span data-l="es">Agregar a Chrome</span><span data-l="en">Add to Chrome</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> <span data-l="es">Extensión gratuita de Chrome</span><span data-l="en">Free Chrome extension</span></span>
+          <h1 data-l="es">Tapá tus chats. <span class="grad">Leé solo lo que importa.</span></h1>
+          <h1 data-l="en">Hide your chats. <span class="grad">Read only what matters.</span></h1>
+          <p class="lead" data-l="es">Chat Privacy Blur desenfoca la lista de chats, los nombres, las fotos y los mensajes de WhatsApp Web, para que nadie lea por encima de tu hombro. Vos elegís qué tapar y qué revelar.</p>
+          <p class="lead" data-l="en">Chat Privacy Blur blurs the chat list, names, photos and messages on WhatsApp Web, so nobody reads over your shoulder. You choose what to hide and what to reveal.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" data-cws href="#get"><span data-l="es">Agregar a Chrome — es gratis</span><span data-l="en">Add to Chrome — it's free</span></a>
+            <a class="btn btn-ghost" href="#features"><span data-l="es">Ver qué hace</span><span data-l="en">See what it does</span></a>
+          </div>
+          <p class="cta-note" data-cws-soon><span data-l="es">Disponible muy pronto en el Chrome Web Store.</span><span data-l="en">Coming very soon to the Chrome Web Store.</span></p>
+          <p class="cta-note"><span data-l="es">Sin cuenta. Sin rastreo. Sin publicidad.</span><span data-l="en">No account. No tracking. No ads.</span></p>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo" id="demo" data-last="on" aria-label="Demo">
+            <div class="demo-bar hide"><span class="avatar"></span> Sofía Ramos</div>
+            <div class="demo-msgs">
+              <div class="m in hide"><span data-l="es">¡Hola! ¿Viste el documento que mandé?</span><span data-l="en">Hi! Did you see the document I sent?</span><small>10:36</small></div>
+              <div class="m out hide"><span data-l="es">Sí, lo estoy revisando ahora.</span><span data-l="en">Yes, I'm reviewing it now.</span><small>10:38</small></div>
+              <div class="m in hide"><span data-l="es">Perfecto, avisame cualquier cosa.</span><span data-l="en">Perfect, let me know anything.</span><small>10:40</small></div>
+              <div class="m out last"><span data-l="es">Listo, te confirmo en un rato. ¡Gracias!</span><span data-l="en">Done, I'll confirm in a bit. Thanks!</span><small>10:41</small></div>
+            </div>
+            <div class="demo-compose"><div><span data-l="es">Escribe un mensaje</span><span data-l="en">Type a message</span></div></div>
+          </div>
+          <div class="demo-controls">
+            <label><input type="checkbox" id="demoLast" checked> <span data-l="es">Último mensaje visible</span><span data-l="en">Last message visible</span></label>
+            <label><span data-l="es">Intensidad</span><span data-l="en">Intensity</span> <input type="range" id="demoPx" min="2" max="16" value="8"></label>
+          </div>
+          <p class="demo-hint"><span data-l="es">Pasá el mouse por un mensaje para revelarlo. Mantené <kbd>Alt</kbd> para ver todo.</span><span data-l="en">Hover a message to reveal it. Hold <kbd>Alt</kbd> to see everything.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <h2 data-l="es">Elegís qué tapar y cómo revelarlo</h2>
+        <h2 data-l="en">You choose what to hide and how to reveal it</h2>
+        <p class="sub" data-l="es">Cada cosa se prende y se apaga por separado, y se configura desde el ícono de la extensión.</p>
+        <p class="sub" data-l="en">Everything toggles separately and is configured from the extension icon.</p>
+        <div class="grid">
+          <div class="card"><div class="ico">💬</div>
+            <h3 data-l="es">Sector por sector</h3><h3 data-l="en">Sector by sector</h3>
+            <p data-l="es">Lista de chats (cada conversación por separado), encabezado con nombre y número, mensajes anteriores, último mensaje, imágenes y caja de escribir.</p>
+            <p data-l="en">Chat list (each conversation on its own), header with name and number, previous messages, last message, images and the message box.</p></div>
+          <div class="card"><div class="ico">🧩</div>
+            <h3 data-l="es">Pieza por pieza</h3><h3 data-l="en">Piece by piece</h3>
+            <p data-l="es">Tapá solo las fotos y dejá los nombres, o el avatar de un audio sin tapar el audio. Foto, nombre, vista previa, hora y estado, por separado.</p>
+            <p data-l="en">Hide only photos and keep names, or a voice note's avatar without hiding the voice note. Photo, name, preview, time and status, separately.</p></div>
+          <div class="card"><div class="ico">👆</div>
+            <h3 data-l="es">Revelá solo lo que leés</h3><h3 data-l="en">Reveal only what you read</h3>
+            <p data-l="es">Al pasar el mouse se revela un solo chat o mensaje, con una demora que ajustás para no destapar sin querer. O con clic, de a uno.</p>
+            <p data-l="en">Hovering reveals a single chat or message, with an adjustable delay so you don't uncover things by accident. Or on click, one at a time.</p></div>
+          <div class="card"><div class="ico">⌨️</div>
+            <h3 data-l="es">Mantené una tecla para ver todo</h3><h3 data-l="en">Hold a key to see everything</h3>
+            <p data-l="es">Alt por defecto, o la combinación de hasta 3 teclas que prefieras si choca con otro atajo.</p>
+            <p data-l="en">Alt by default, or any combination of up to 3 keys you prefer if it clashes with another shortcut.</p></div>
+          <div class="card"><div class="ico">🔒</div>
+            <h3 data-l="es">Bloqueo rápido</h3><h3 data-l="en">Quick lock</h3>
+            <p data-l="es">Un atajo (Alt+L) tapa todo al instante, incluso al pasar el mouse. Útil cuando alguien se acerca.</p>
+            <p data-l="en">One shortcut (Alt+L) hides everything instantly, even on hover. Handy when someone walks up.</p></div>
+          <div class="card"><div class="ico">⏱️</div>
+            <h3 data-l="es">Se tapa solo <span class="tag pro-only">Pro</span></h3><h3 data-l="en">Hides by itself <span class="tag pro-only">Pro</span></h3>
+            <p data-l="es">Tapa todo tras un tiempo de inactividad o al salir de la ventana, y oculta el título de la pestaña ("(3) WhatsApp").</p>
+            <p data-l="en">Hides everything after a period of inactivity or when you leave the window, and masks the tab title ("(3) WhatsApp").</p></div>
+          <div class="card"><div class="ico">🛠️</div>
+            <h3 data-l="es">Se repara solo</h3><h3 data-l="en">Self-repairing</h3>
+            <p data-l="es">WhatsApp cambia su HTML seguido. La extensión prueba varios selectores, detecta por estructura si fallan, y te muestra qué detecta.</p>
+            <p data-l="en">WhatsApp changes its HTML often. The extension tries several selectors, falls back to structure detection, and shows you what it detects.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2 data-l="es">Cómo funciona</h2><h2 data-l="en">How it works</h2>
+        <p class="sub" data-l="es">Tres pasos y sin configurar nada.</p><p class="sub" data-l="en">Three steps, no setup needed.</p>
+        <ol class="steps">
+          <li><h3 data-l="es">Instalala</h3><h3 data-l="en">Install it</h3>
+            <p data-l="es">Agregala a Chrome (también funciona en Edge y Brave).</p><p data-l="en">Add it to Chrome (it also works in Edge and Brave).</p></li>
+          <li><h3 data-l="es">Abrí WhatsApp Web</h3><h3 data-l="en">Open WhatsApp Web</h3>
+            <p data-l="es">Todo se desenfoca al instante, menos lo que decidas dejar visible.</p><p data-l="en">Everything blurs instantly, except what you decide to keep visible.</p></li>
+          <li><h3 data-l="es">Revelá lo que necesitás</h3><h3 data-l="en">Reveal what you need</h3>
+            <p data-l="es">Mouse, clic o una tecla. Ajustá todo desde el ícono de la extensión.</p><p data-l="en">Mouse, click or a key. Adjust everything from the extension icon.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 data-l="es">Capturas</h2><h2 data-l="en">Screenshots</h2>
+        <div class="shots" style="margin-top:24px">
+          <figure>
+            <img data-l="es" src="assets/es-1-blur.png" alt="WhatsApp Web con todo desenfocado salvo el último mensaje" loading="lazy">
+            <img data-l="en" src="assets/en-1-blur.png" alt="WhatsApp Web blurred except for the last message" loading="lazy">
+            <figcaption data-l="es">Todo borroso, menos el último mensaje.</figcaption><figcaption data-l="en">Everything blurred except the last message.</figcaption>
+          </figure>
+          <figure>
+            <img data-l="es" src="assets/es-2-options.png" alt="Panel de opciones de la extensión" loading="lazy">
+            <img data-l="en" src="assets/en-2-options.png" alt="The extension's options panel" loading="lazy">
+            <figcaption data-l="es">Elegís exactamente qué tapar.</figcaption><figcaption data-l="en">Choose exactly what to hide.</figcaption>
+          </figure>
+          <figure>
+            <img data-l="es" src="assets/es-4-details.png" alt="Configuración completa con interruptores por pieza" loading="lazy">
+            <img data-l="en" src="assets/en-4-details.png" alt="Full settings with per-piece switches" loading="lazy">
+            <figcaption data-l="es">Configuración completa, pieza por pieza.</figcaption><figcaption data-l="en">Full settings, piece by piece.</figcaption>
+          </figure>
+          <figure>
+            <img data-l="es" src="assets/es-3-lock.png" alt="Bloqueo rápido: todo tapado" loading="lazy">
+            <img data-l="en" src="assets/en-3-lock.png" alt="Quick lock: everything hidden" loading="lazy">
+            <figcaption data-l="es">Bloqueo rápido con un atajo.</figcaption><figcaption data-l="en">Quick lock with one shortcut.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="pricing">
+      <div class="wrap">
+        <h2 data-l="es">Gratis, con Pro opcional</h2><h2 data-l="en">Free, with optional Pro</h2>
+        <p class="sub pro-off-only" data-l="es">Por ahora, todo está incluido y es gratis.</p>
+        <p class="sub pro-off-only" data-l="en">For now, everything is included and free.</p>
+        <p class="sub pro-only" data-l="es">Lo esencial es gratis para siempre. Pro suma comodidad extra, con un pago único.</p>
+        <p class="sub pro-only" data-l="en">The essentials are free forever. Pro adds extra convenience, with a one-time payment.</p>
+        <div class="price-grid">
+          <div class="card">
+            <h3 data-l="es">Gratis</h3><h3 data-l="en">Free</h3>
+            <div class="big">$0</div>
+            <ul data-l="es">
+              <li>Todos los sectores a desenfocar</li><li>Reveal por mouse, clic o tecla</li><li>Demora de reveal ajustable</li>
+              <li>Bloqueo rápido</li><li>Reparación automática</li><li class="pro-off-only">Bloqueo por inactividad y al salir</li><li class="pro-off-only">Modo negro y selectores propios</li>
+            </ul>
+            <ul data-l="en">
+              <li>All sectors to blur</li><li>Reveal by mouse, click or key</li><li>Adjustable reveal delay</li>
+              <li>Quick lock</li><li>Self-repair</li><li class="pro-off-only">Idle and on-leave lock</li><li class="pro-off-only">Black-out mode and own selectors</li>
+            </ul>
+          </div>
+          <div class="card pro-only">
+            <h3>Pro</h3>
+            <div class="big" data-l="es">Pago único</div><div class="big" data-l="en">One-time payment</div>
+            <ul data-l="es">
+              <li>Todo lo gratuito</li><li>Bloqueo por inactividad y al salir de la ventana</li><li>Modo negro</li>
+              <li>Ocultar el título de la pestaña</li><li>Selectores CSS propios</li><li>Presets Máxima y Pantalla</li>
+            </ul>
+            <ul data-l="en">
+              <li>Everything in Free</li><li>Idle and on-leave lock</li><li>Black-out mode</li>
+              <li>Hide the tab title</li><li>Your own CSS selectors</li><li>Maximum and Screen share presets</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <p class="sub"></p>
+        <details><summary data-l="es">¿Lee o guarda mis mensajes?</summary><summary data-l="en">Does it read or store my messages?</summary>
+          <p data-l="es">No. Solo aplica un efecto visual sobre la página, dentro de tu navegador. No recolecta, guarda ni envía mensajes, contactos ni números. No usa servidores propios ni analítica.</p>
+          <p data-l="en">No. It only applies a visual effect to the page, inside your browser. It does not collect, store or send messages, contacts or numbers. No own servers, no analytics.</p></details>
+        <details><summary data-l="es">¿Qué pasa si WhatsApp cambia su diseño?</summary><summary data-l="en">What if WhatsApp changes its design?</summary>
+          <p data-l="es">La extensión prueba varios selectores y, si fallan, detecta los elementos por su estructura. El popup te muestra qué se detecta. Si algo se rompe, se corrige con una actualización.</p>
+          <p data-l="en">The extension tries several selectors and, if they fail, detects elements by structure. The popup shows what is detected. If something breaks, it is fixed with an update.</p></details>
+        <details><summary data-l="es">¿Funciona en el celular o en la app de escritorio?</summary><summary data-l="en">Does it work on mobile or the desktop app?</summary>
+          <p data-l="es">No. Es una extensión de navegador: funciona en WhatsApp Web (web.whatsapp.com) con Chrome, Edge o Brave en computadora.</p>
+          <p data-l="en">No. It is a browser extension: it works on WhatsApp Web (web.whatsapp.com) with Chrome, Edge or Brave on a computer.</p></details>
+        <details><summary data-l="es">¿Está afiliada a WhatsApp?</summary><summary data-l="en">Is it affiliated with WhatsApp?</summary>
+          <p data-l="es">No. Chat Privacy Blur es un proyecto independiente, no afiliado, asociado ni respaldado por WhatsApp ni por Meta.</p>
+          <p data-l="en">No. Chat Privacy Blur is an independent project, not affiliated with, associated with or endorsed by WhatsApp or Meta.</p></details>
+        <details><summary data-l="es">¿Puedo elegir otra tecla para ver todo?</summary><summary data-l="en">Can I choose another key to see everything?</summary>
+          <p data-l="es">Sí. Desde el popup elegís una tecla o una combinación de hasta 3, por si Alt choca con otro atajo.</p>
+          <p data-l="en">Yes. From the popup you pick a key or a combination of up to 3, in case Alt clashes with another shortcut.</p></details>
+      </div>
+    </section>
+
+    <section class="alt" id="get">
+      <div class="wrap" style="text-align:center">
+        <h2 data-l="es">Tu privacidad, a tu manera</h2><h2 data-l="en">Your privacy, your way</h2>
+        <p class="sub" style="margin-inline:auto" data-l="es">Instalala y dejá de preocuparte por quién mira tu pantalla.</p>
+        <p class="sub" style="margin-inline:auto" data-l="en">Install it and stop worrying about who is looking at your screen.</p>
+        <a class="btn btn-primary" data-cws href="#get"><span data-l="es">Agregar a Chrome — es gratis</span><span data-l="en">Add to Chrome — it's free</span></a>
+        <p class="cta-note" data-cws-soon><span data-l="es">Disponible muy pronto en el Chrome Web Store.</span><span data-l="en">Coming very soon to the Chrome Web Store.</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="24" height="24"> Chat Privacy Blur</a>
+      <nav aria-label="Footer">
+        <a href="privacy.html"><span data-l="es">Privacidad</span><span data-l="en">Privacy</span></a>
+        <a href="terms.html"><span data-l="es">Términos</span><span data-l="en">Terms</span></a>
+        <a href="mailto:fixcelservice@gmail.com"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+      </nav>
+      <p class="disclaimer" data-l="es">Chat Privacy Blur es un proyecto independiente. No está afiliado, asociado ni respaldado por WhatsApp ni por Meta. WhatsApp es una marca de Meta Platforms, Inc.</p>
+      <p class="disclaimer" data-l="en">Chat Privacy Blur is an independent project. It is not affiliated with, associated with or endorsed by WhatsApp or Meta. WhatsApp is a trademark of Meta Platforms, Inc.</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>

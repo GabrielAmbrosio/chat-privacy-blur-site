@@ -1,0 +1,51 @@
+// ---- Configuración del sitio ----
+const CHROME_WEB_STORE_URL = ""; // pegar la URL de la ficha cuando esté publicada
+const PRO_LIVE = false; // true cuando exista el plan Pro (muestra insignias y precios Pro)
+
+const root = document.documentElement;
+root.dataset.pro = PRO_LIVE ? "on" : "off";
+
+// ---- Idioma ----
+const TITLES = {
+  es: "Chat Privacy Blur — Tapá tus chats. Leé solo lo que importa.",
+  en: "Chat Privacy Blur — Hide your chats. Read only what matters.",
+};
+function setLang(lang) {
+  root.lang = lang;
+  const { titleEs, titleEn } = document.body.dataset;
+  document.title = (lang === "es" ? titleEs : titleEn) || TITLES[lang];
+  for (const b of document.querySelectorAll(".lang button")) b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  try { localStorage.setItem("cpb-lang", lang); } catch {}
+}
+// Idioma guardado; si no hay, el del navegador (español → ES, el resto → EN).
+let saved = null;
+try { saved = localStorage.getItem("cpb-lang"); } catch {}
+const browserLang = (navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en";
+setLang(saved === "es" || saved === "en" ? saved : browserLang);
+for (const b of document.querySelectorAll(".lang button")) b.addEventListener("click", () => setLang(b.dataset.lang));
+
+// ---- Botón de Chrome Web Store ----
+for (const a of document.querySelectorAll("[data-cws]")) {
+  if (CHROME_WEB_STORE_URL) {
+    a.href = CHROME_WEB_STORE_URL;
+    a.target = "_blank";
+    a.rel = "noopener";
+  } else {
+    a.setAttribute("aria-disabled", "true");
+    a.removeAttribute("href");
+  }
+}
+for (const n of document.querySelectorAll("[data-cws-soon]")) n.hidden = !!CHROME_WEB_STORE_URL;
+
+// ---- Demo interactiva ----
+const demo = document.getElementById("demo");
+if (demo) {
+  const last = document.getElementById("demoLast");
+  const px = document.getElementById("demoPx");
+  last.addEventListener("input", () => (demo.dataset.last = last.checked ? "on" : "off"));
+  px.addEventListener("input", () => demo.style.setProperty("--px", `${px.value}px`));
+  const peek = (on) => demo.classList.toggle("peek", on);
+  window.addEventListener("keydown", (e) => e.key === "Alt" && peek(true));
+  window.addEventListener("keyup", (e) => e.key === "Alt" && peek(false));
+  window.addEventListener("blur", () => peek(false));
+}
