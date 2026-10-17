@@ -1,6 +1,6 @@
 // ---- Configuración del sitio ----
-const CHROME_WEB_STORE_URL = ""; // pegar la URL de la ficha cuando esté publicada
-const PRO_LIVE = false; // true cuando exista el plan Pro (muestra insignias y precios Pro)
+const CHROME_WEB_STORE_URL = "https://chromewebstore.google.com/detail/chat-privacy-blur/gejcelngehokmnpnndflacodglccabki";
+const PRO_LIVE = true; // muestra insignias, precios y preguntas de Pro
 
 const root = document.documentElement;
 root.dataset.pro = PRO_LIVE ? "on" : "off";
